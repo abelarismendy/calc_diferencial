@@ -24,10 +24,10 @@ while n <= 100:
     i = 1
     x = inicio
     suma = 0
-    sum_txt =r'$\sum_{i=0}^{3}x_{i}$'
+    sum_txt =r'$\sum_{i=1}^{n}f(x_{i})\Delta{x}$'
     ax = graficar_funcion()
-    red_patch = patches.Patch(edgecolor='red', fill=False,  label=sum_txt)
-    sumatoria_leyenda = ax.legend(handles=[red_patch], loc='upper right', bbox_to_anchor= (0.2,0.89))
+    red_patch = patches.Patch(edgecolor='red', facecolor='red', alpha=0.2, fill=True,  label=sum_txt)
+    sumatoria_leyenda = ax.legend(handles=[red_patch], loc='lower center')
     ax.add_artist(sumatoria_leyenda)
     while i <= n:
         x += fragmento
@@ -38,10 +38,12 @@ while n <= 100:
             fragmento,
             f_de_x,
             edgecolor = 'red',
-            fill=False
+            facecolor = 'red',
+            alpha = 0.2,
+            fill=True
         ))
         i += 1
     plt.title(f'Función: {f}, n = {n}, {delta} = {fragmento}\nárea = {suma}')
     plt.legend()
-    plt.show()
+    plt.savefig(f'img/{n}.png')
     n += incremento
