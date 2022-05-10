@@ -45,5 +45,5 @@ while n <= 100:
         i += 1
     plt.title(f'Función: {f}, n = {n}, {delta} = {fragmento}\nárea = {suma}')
     plt.legend(loc='upper center')
-    plt.savefig(f'img/{n}.png')
+    plt.savefig(f'img/{n}.png', dpi = 200)
     n += incremento
