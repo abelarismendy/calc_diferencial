@@ -1,5 +1,4 @@
-from math import *
-from numpy import *
+from numpy import arange
 from matplotlib import pyplot as plt
 from matplotlib import patches
 n = 10
@@ -7,7 +6,6 @@ incremento = 10
 inicio = 0
 fin = 3
 f = r'$y=x^2+2$'
-
 
 def graficar_funcion():
     t = arange(0.01, 3, 0.01)
@@ -18,7 +16,6 @@ def graficar_funcion():
         arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=0"))
     plt.grid()
     return ax
-    # plt.show()
 
 while n <= 100:
     diferencia = fin - inicio
@@ -36,15 +33,9 @@ while n <= 100:
             fragmento,
             f_de_x,
             edgecolor = 'red',
-            # facecolor = 'red',
             fill=False
         ))
         i += 1
     plt.title(f'Función: {f}\nn = {n}, área = {suma}')
     plt.show()
-    # print(fragmento, n, suma)
     n += incremento
-
-
-
-# graficar_funcion(10, 15)
