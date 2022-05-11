@@ -5,7 +5,7 @@ n = 10
 incremento = 10
 inicio = 0
 fin = 3
-f = r'$y=x^2+2$'
+f = r'$f(x)=x^2+2$'
 delta = r'$\Delta{x}$'
 
 def graficar_funcion():
@@ -13,7 +13,7 @@ def graficar_funcion():
     y = (t**2)+2
     fig, ax = plt.subplots()
     ax.plot(t, y, label=f)
-    texto = plt.annotate(f, xy = (2,6), xytext = (1.2, 7), fontsize=15,
+    texto = plt.annotate(f, xy = (2,6), xytext = (1.1, 7), fontsize=15,
         arrowprops=dict(arrowstyle="<-", connectionstyle="arc3,rad=0"))
     plt.grid()
     return ax
@@ -26,7 +26,8 @@ while n <= 100:
     suma = 0
     sum_txt =r'$\sum_{i=1}^{n}f(x_{i})\Delta{x}$'
     ax = graficar_funcion()
-    red_patch = patches.Patch(edgecolor='red', facecolor='red', alpha=0.2, fill=True,  label=sum_txt)
+    red_patch = patches.Patch(edgecolor='red', facecolor='red', alpha=0.2,
+                              fill=True,  label=sum_txt)
     sumatoria_leyenda = ax.legend(handles=[red_patch], loc='lower center')
     ax.add_artist(sumatoria_leyenda)
     while i <= n:
