@@ -8,7 +8,7 @@ end = 3*aux
 f = lambda x: math.sin(x**2)
 diff = 1/aux
 dx = diff/rectangles
-title = r'$G(x)=[\int_{0}ˆx{}]\! x \,dx$'
+title = r'$G(x)=\int_{0}ˆx{}]\! x \,dx$'
 
 def integral(a, b, i):
     suma = 0
