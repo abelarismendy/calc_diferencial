@@ -27,7 +27,7 @@ while i < end:
     a=i/aux
     i+=1
     b=i/aux
-    # suma = integral(0, b, i)
+    #suma = integral(0, b, i)
     suma = integral(a, b, i)
     x.append(a)
     y.append(suma)
@@ -35,4 +35,4 @@ while i < end:
 #for p in lista: print(p)
 
 plt.plot(x,y)
-plt.show()
+plt.savefig('quiz/a.png', dpi = 200)
