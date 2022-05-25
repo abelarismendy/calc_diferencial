@@ -12,6 +12,8 @@ g_x = r'$G(x)=\int_{0}^{x} sin(t^2) \cdot dt$'
 delta = r'$\Delta{x}$'
 title = f'{g_x}\nn={rectangles}, {delta}={dx}'
 
+sum_txt =r'$\sum_{i=1}^{n}f(x_{i})\Delta{x}$'
+
 def integral(a, b, i):
     suma = 0
     j = 1
@@ -27,16 +29,19 @@ i=start
 x = []
 y = []
 while i < end:
-    a=i/aux
-    i+=1
+    # a=i/aux
     b=i/aux
+    i+=1
     suma = integral(0, b, i)
-    #suma = integral(a, b, i)
-    x.append(a)
+    x.append(b)
     y.append(suma)
 
 #for p in lista: print(p)
 
 plt.plot(x,y)
+texto = plt.annotate(sum_txt, xy = (2.0,0.8), xytext = (1.3, 0.3), fontsize=15,
+        arrowprops=dict(arrowstyle="<-", connectionstyle="arc3,rad=0"))
+
+plt.grid()
 plt.title(title)
 plt.savefig('quiz/0.png', dpi = 200)
