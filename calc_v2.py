@@ -8,7 +8,9 @@ end = 3*aux
 f = lambda x: math.sin(x**2)
 diff = 1/aux
 dx = diff/rectangles
-title = r'$G(x)=\int_{0}^{x} sin(t^2) \cdot dt$'
+g_x = r'$G(x)=\int_{0}^{x} sin(t^2) \cdot dt$'
+delta = r'$\Delta{x}$'
+title = f'{g_x}\nn={rectangles}, {delta}={dx}'
 
 def integral(a, b, i):
     suma = 0
